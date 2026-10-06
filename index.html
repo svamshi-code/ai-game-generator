@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Game Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>⚔️ AI Game Generator</h1>
+      <p>Turn a game idea into a playable browser prototype.</p>
+    </div>
+    <a class="github" href="https://github.com/" target="_blank">GitHub</a>
+  </header>
+
+  <main class="layout">
+    <section class="panel controls">
+      <h2>Create a game</h2>
+      <label for="idea">Describe your game</label>
+      <textarea id="idea" placeholder="Example: A lone warrior fights monsters in a dark dungeon and gains XP.">A lone warrior fights monsters in a dark dungeon and gains XP.</textarea>
+
+      <div class="row">
+        <label>Difficulty
+          <select id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="normal" selected>Normal</option>
+            <option value="hard">Hard</option>
+          </select>
+        </label>
+        <label>Theme
+          <select id="theme">
+            <option value="dark" selected>Dark Fantasy</option>
+            <option value="neon">Neon</option>
+            <option value="forest">Forest</option>
+          </select>
+        </label>
+      </div>
+
+      <button id="generate">✨ Generate Game</button>
+      <button id="download" class="secondary">⬇ Download Game</button>
+
+      <div class="status" id="status">Ready.</div>
+
+      <h3>What this MVP does</h3>
+      <ul>
+        <li>Reads your game idea for keywords.</li>
+        <li>Builds a playable canvas prototype.</li>
+        <li>Supports movement, enemies, XP, coins and levels.</li>
+        <li>Works on desktop and mobile.</li>
+        <li>Exports a standalone HTML game.</li>
+      </ul>
+    </section>
+
+    <section class="panel preview">
+      <div class="preview-head">
+        <h2>Live Preview</h2>
+        <span id="gameName">Dungeon Prototype</span>
+      </div>
+      <iframe id="gameFrame" title="Generated game preview"></iframe>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
